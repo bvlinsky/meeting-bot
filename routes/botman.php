@@ -2,6 +2,8 @@
 
 $botman = app('botman');
 
-$botman->hears('Hi', fn ($bot) => $bot->reply('Hello!'));
+$botman->hears('Hi', 'App\Http\Controllers\BotManController@hi');
 
-$botman->fallback(fn ($bot) => $bot->reply('Sorry, I did not understand.'));
+$botman->fallback('App\Http\Controllers\BotManController@fallback');
+
+$botman->listen();

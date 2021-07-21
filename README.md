@@ -28,3 +28,8 @@ You can manually test the bot in the console using:
 ```
 php artisan bot:test
 ```
+
+You can run tests automatically with the command:
+```
+composer test
+```

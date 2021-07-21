@@ -4,7 +4,6 @@ use Laravel\Lumen\Routing\Router;
 
 /** @var Router $router */
 
-$router->get('/', 'BotManController@index');
-$router->post('/', 'BotManController@index');
-
-require __DIR__ . '/botman.php';
+$router->group(['prefix' => 'botman'], function () use ($router) {
+    require __DIR__ . '/botman.php';
+});
